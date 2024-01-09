@@ -2,9 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero';
+import TopBar from '../components/topbar/TopBar';
 ---
 
 <Layout title="Home">
+	<TopBar/>
 	<Hero />
 	<MainLayout>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
