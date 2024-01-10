@@ -1,0 +1,22 @@
+---
+import Footer from "../components/footer/Footer";
+import Content from "../components/category/Content";
+import TopBar from "../components/topbar/TopBar";
+import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+<!-- set document.title -->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const nameParsed = name.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+    document.title = nameParsed;
+</script>
+
+<Layout>
+    <MainLayout>
+        <TopBar slot="header" client:load/>
+        <Content/>
+        <Footer slot="footer"/>
+    </MainLayout>
+</Layout>

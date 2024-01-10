@@ -1,17 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MainLayout from '../layouts/MainLayout.astro';
-import Hero from '../components/Hero';
+import Hero from '../components/home/Hero';
 import TopBar from '../components/topbar/TopBar';
 import Footer from '../components/footer/Footer';
 import Content from '../components/home/Content';
 ---
 
 <Layout title="Home">
-	<TopBar/>
-	<Hero />
 	<MainLayout>
+		<TopBar slot="header" client:load/>
+		<Hero slot="header"/>
 		<Content/>
+		<Footer slot="footer"/>
 	</MainLayout>
-	<Footer/>
 </Layout>
