@@ -1,10 +1,10 @@
 import { useState } from "react";
-import HamburgerButton from "../sidebar/HamburgerButton";
-import HamburerMenu from "../sidebar/HamburgerMenu";
-import MenuButton from "./MenuButton";
-import MenuListButton from "./MenuListButton";
+import HamburgerButton from "./sidebar/HamburgerButton";
+import HamburerMenu from "./sidebar/HamburgerMenu";
+import MenuButton from "./topbar/MenuButton";
+import MenuListButton from "./topbar/MenuListButton";
 
-export default function TopBar() {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     function toggleMenu() {
@@ -21,6 +21,7 @@ export default function TopBar() {
                 </div>
                 <div className="md:flex items-center gap-4 hidden">
                     <MenuButton path="/" title="Home" icon="/icons/house.svg" />
+                    <MenuButton path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuListButton title="Category" icon="/icons/tags.svg">
                         <MenuButton path="/category?name=papan-bunga" title="Papan Bunga" />
                         <MenuButton path="/category?name=bouquet" title="Bouquet" />

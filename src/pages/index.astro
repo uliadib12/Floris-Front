@@ -2,14 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/home/Hero';
-import TopBar from '../components/navbar/topbar/TopBar';
+import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 import Content from '../components/home/Content';
 ---
 
 <Layout title="Home">
 	<MainLayout>
-		<TopBar slot="navbar" client:load/>
+		<Navbar slot="navbar" client:load/>
 		<Hero slot="header"/>
 		<Content/>
 		<Footer slot="footer"/>

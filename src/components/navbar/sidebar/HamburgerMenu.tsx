@@ -42,6 +42,7 @@ export default function HamburerMenu(
                         </button>
                     </div>
                     <MenuButton path="/" title="Home" icon="/icons/house.svg" />
+                    <MenuButton path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuButton path="/category?name=papan-bunga" title="Papan Bunga" />
                     <MenuButton path="/category?name=bouquet" title="Bouquet" />
                     <MenuButton path="/category?name=money-cake" title="Money Cake" />
