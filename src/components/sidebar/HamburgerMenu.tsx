@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import MenuButton from './MenuButton';
+import MenuButton from '../topbar/MenuButton';
 
 export default function HamburerMenu(
     props: {

@@ -3,8 +3,10 @@ import Card from "./Card";
 
 export default function Content() {
     return (
-        <div>
-            <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">
+        <div className="-mt-16">
+            <h1
+                style={{fontFamily: 'Sacramento'}}
+                className="text-4xl font-bold text-center text-pink-500 italic mb-10">
                 Category
             </h1>
             <CardContainer>

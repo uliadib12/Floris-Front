@@ -1,6 +1,6 @@
 import { useState } from "react";
-import HamburgerButton from "./HamburgerButton";
-import HamburerMenu from "./HamburgerMenu";
+import HamburgerButton from "../sidebar/HamburgerButton";
+import HamburerMenu from "../sidebar/HamburgerMenu";
 import MenuButton from "./MenuButton";
 import MenuListButton from "./MenuListButton";
 
@@ -15,9 +15,9 @@ export default function TopBar() {
         <div className="w-full fixed drop-shadow-lg z-50">
             <div className="flex justify-between items-center w-full h-16 px-4 bg-pink-400">
                 <div className="flex items-center">
-                    <div className="text-white text-2xl font-bold">
+                    <a href="/" className="text-white text-2xl font-bold">
                         <img src="/logo.png" width={100} height={100} alt="logo" />
-                    </div>
+                    </a>
                 </div>
                 <div className="md:flex items-center gap-4 hidden">
                     <MenuButton path="/" title="Home" icon="/icons/house.svg" />

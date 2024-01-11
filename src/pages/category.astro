@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/footer/Footer";
-import Content from "../components/category/Content";
+import Content from "../components/category/Content.astro";
 import TopBar from "../components/topbar/TopBar";
 import Layout from "../layouts/Layout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
@@ -15,7 +15,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <Layout>
     <MainLayout>
-        <TopBar slot="header" client:load/>
+        <TopBar slot="navbar" client:load/>
         <Content/>
         <Footer slot="footer"/>
     </MainLayout>
