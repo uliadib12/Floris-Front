@@ -3,6 +3,8 @@ import HamburgerButton from "./sidebar/HamburgerButton";
 import HamburerMenu from "./sidebar/HamburgerMenu";
 import MenuButton from "./topbar/MenuButton";
 import MenuListButton from "./topbar/MenuListButton";
+import MenuButtonBadge from "./topbar/MenuButtonBadge";
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,15 +17,13 @@ export default function Navbar() {
         <div className="w-full fixed drop-shadow-lg z-50">
             <div className="flex justify-between items-center w-full h-16 px-4 bg-pink-400">
                 <div className="flex items-center">
-                    <h1>
-                        <a href="/" className="text-white text-2xl font-bold">
-                            <img src="/logo.png" width={100} height={100} alt="logo" />
-                        </a>
-                    </h1>
+                    <div className="text-white text-2xl font-bold">
+                        <img src="/logo.png" width={100} height={100} alt="logo" />
+                    </div>
                 </div>
                 <div className="md:flex items-center gap-4 hidden">
                     <MenuButton path="/" title="Home" icon="/icons/house.svg" />
-                    <MenuButton path='/cart' title="Cart" icon="/icons/cart.svg" />
+                    <MenuButtonBadge path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuListButton title="Category" icon="/icons/tags.svg">
                         <MenuButton path="/category?name=papan-bunga" title="Papan Bunga" />
                         <MenuButton path="/category?name=bouquet" title="Bouquet" />

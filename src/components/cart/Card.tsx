@@ -65,7 +65,7 @@ export default function Card() {
                             </button>
                         </div>
                     </div>
-                    <div className="mt-4">
+                    <div className="mt-4 text-orange-500">
                         Rp. 250.000
                     </div>
                 </div>
