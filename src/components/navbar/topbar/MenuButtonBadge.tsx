@@ -11,7 +11,7 @@ export default function MenuButtonBadge(
         path = undefined,
         title = '',
         icon = '',
-        badge = true,
+        badge = false,
         onClick = () => {}
     } : MenuButtonBadgeProps
 ) {

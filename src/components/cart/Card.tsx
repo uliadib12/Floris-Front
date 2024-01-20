@@ -31,19 +31,16 @@ export default function Card() {
                     <div className="text-gray-700 text-base">
                         <ul>
                             <li>
-                                Tipe: Hand Bouquet
+                                Variant: Hand Bouquet
                             </li>
                             <li>
-                                Harga: Rp 250.000
+                                Price: Rp 250.000
                             </li>
                             <li>
-                                Ukuran: 20cm x 20cm
+                                Size: 20cm x 20cm
                             </li>
                             <li>
-                                Bahan: Mawar
-                            </li>
-                            <li>
-                                Keterangan tambahan: -
+                                Additional Information: -
                             </li>
                         </ul>
                     </div>
