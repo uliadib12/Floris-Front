@@ -1,0 +1,15 @@
+---
+import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/Navbar";
+import Layout from "../layouts/Layout.astro";
+import ProductLayout from "../layouts/ProductLayout.astro";
+import Content from "../components/product/Content.astro";
+---
+
+<Layout title="Test">
+    <ProductLayout>
+        <Navbar slot="navbar" client:load/>
+        <Content/>
+        <Footer slot="footer"/>
+    </ProductLayout>
+</Layout>
