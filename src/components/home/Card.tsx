@@ -15,7 +15,7 @@ export default function Card(
                     <img className="w-full h-96 object-cover hover:scale-125 transition duration-500" src={props.image} alt="Sunset in the mountains" />
                 }
             </div>
-            <div className="px-6 py-4">
+            <div className="px-6 py-4 h-40">
                 <div className="font-bold text-xl mb-2">{props.title}</div>
                 <p className="text-gray-700 text-base">
                     {props.description}
