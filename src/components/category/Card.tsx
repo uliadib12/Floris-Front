@@ -30,11 +30,11 @@ export default function Card(
                         :
                         props.minPrice === props.maxPrice ?
                         <div className="text-orange-400 font-semibold text-base">
-                            Rp. {props.minPrice}
+                            {props.minPrice.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}
                         </div>
                         :
                         <div className="text-orange-400 font-semibold text-base">
-                            Rp. {props.minPrice} - Rp. {props.maxPrice}
+                            {props.minPrice.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })} - {props.maxPrice.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}
                         </div>
                     }
                 </p>

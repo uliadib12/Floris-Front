@@ -1,6 +1,8 @@
 import useProduct from "../../hooks/product/useProduct";
 import ImageContainer from "./ImageContainer";
+import ImageSkeleton from "./skeleton/ImageSkeleton";
 import ProductDetails from "./ProductDetails";
+import ProductDetailsSkeleton from "./skeleton/ProductDetailsSkeleton";
 
 export default function ProductContainer() {
     const product = useProduct();
@@ -11,14 +13,19 @@ export default function ProductContainer() {
             <div className="h-full w-full">
                 {
                     product.images.length === 0 ?
-                    <div className="animate-pulse bg-slate-300 w-full h-full"></div>
+                    <ImageSkeleton/>
                     :
                     <ImageContainer images={product.images}/>
                 }
             </div>
         </div>
         <div className="grow basis-[50%] p-6">
-            <ProductDetails id={product.id} name={product.name} description={product.description} variants={product.variants}/>
+            {
+                product.id === undefined ?
+                <ProductDetailsSkeleton/>
+                :
+                <ProductDetails id={product.id} name={product.name} description={product.description} variants={product.variants}/>
+            }
         </div>
     </div>
     )
