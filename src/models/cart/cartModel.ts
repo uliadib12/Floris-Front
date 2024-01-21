@@ -1,4 +1,4 @@
-import type ProductCartModel from "../product/productCartModel";
+import type ProductCartModel from "./productCartModel";
 
 export default class CartModel {
     products: ProductCartModel[];
