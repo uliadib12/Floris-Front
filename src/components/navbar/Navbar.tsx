@@ -35,6 +35,8 @@ export default function Navbar() {
                         <MenuButton path="/category?name=snack-tower" title="Snack Tower" />
                     </MenuListButton>
                     <MenuButton path="/#contact" title="Contact" icon="/icons/telephone.svg" />
+                    <MenuButton path="/login" title="" icon="/icons/person-circle.svg" />
+
                 </div>
                 <div className="flex md:hidden items-center">
                     <HamburgerButton onClick={toggleMenu} />

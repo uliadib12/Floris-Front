@@ -2,7 +2,7 @@ export default class ProductModel {
     id: number;
     name: string;
     description: string;
-    image: string[];
+    images: string[];
     variants: ProductVariantModel[];
 
     constructor
@@ -10,15 +10,19 @@ export default class ProductModel {
         id: number, 
         name: string, 
         description: string, 
-        image: string[], 
+        images: string[], 
         variants: ProductVariantModel[]
     ) 
     {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.image = image;
+        this.images = images;
         this.variants = variants;
+    }
+
+    static EmptyProduct(): ProductModel {
+        return new ProductModel(undefined, '', '', [], []);
     }
 }
 
