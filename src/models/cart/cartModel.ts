@@ -1,18 +1,11 @@
 import type ProductCartModel from "./productCartModel";
 
 export default class CartModel {
-    products: ProductCartModel[];
-    totalPrice: number;
-    totalItems: number;
+    products: ProductCartModel[] = [];
 
-    constructor
-    (
-        products: ProductCartModel[], 
-    ) 
+    constructor (products: ProductCartModel[]) 
     {
         this.products = products;
-        this.totalPrice = this.getTotalPrice();
-        this.totalItems = this.getTotalItems();
     }
 
     getTotalPrice() {
@@ -29,5 +22,9 @@ export default class CartModel {
             totalItems += product.quantity;
         });
         return totalItems;
+    }
+
+    static EmptyCart() {
+        return new CartModel([]);
     }
 }
