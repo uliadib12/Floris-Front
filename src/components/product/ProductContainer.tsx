@@ -5,7 +5,7 @@ import ProductDetails from "./ProductDetails";
 import ProductDetailsSkeleton from "./skeleton/ProductDetailsSkeleton";
 
 export default function ProductContainer() {
-    const product = useProduct();
+    const [product, setProduct] = useProduct();
 
     return (
         <div className="flex flex-col md:flex-row justify-between">
@@ -24,7 +24,7 @@ export default function ProductContainer() {
                 product.id === undefined ?
                 <ProductDetailsSkeleton/>
                 :
-                <ProductDetails id={product.id} name={product.name} description={product.description} variants={product.variants}/>
+                <ProductDetails product={product} setProduct={setProduct} />
             }
         </div>
     </div>

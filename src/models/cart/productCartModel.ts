@@ -1,3 +1,5 @@
+import type ProductModel from "../product/productModel";
+
 export default class ProductCartModel {
     id: number;
     name: string;
@@ -31,5 +33,21 @@ export default class ProductCartModel {
         this.quantity = quantity;
         this.size = size;
         this.additionalInformation = additionalInformation;
+    }
+
+    static FromProduct(product: ProductModel) {
+        const variantIndex = product.userInput.variantIndex;
+
+        return new ProductCartModel(
+            product.id,
+            product.name,
+            product.images[0],
+            variantIndex,
+            product.variants[variantIndex].variantName,
+            product.variants[variantIndex].price,
+            product.userInput.quantity,
+            product.variants[variantIndex].size,
+            product.userInput.additionalInformation
+        );
     }
 }
