@@ -42,7 +42,7 @@ export default function HamburerMenu(
                             <img src="/icons/x-circle.svg" width={30} height={30} alt="close" style={{filter: 'invert(1)'}}/>
                         </button>
                     </div>
-                    <MenuButton path="/login" title="login" icon="/icons/person-circle.svg" />
+                    <MenuButton path="/auth/login" title="login" icon="/icons/person-circle.svg" />
                     <br />
                     <MenuButton path="/" title="Home" icon="/icons/house.svg" />
                     <MenuButton path="/category?name=papan-bunga" title="Papan Bunga" />

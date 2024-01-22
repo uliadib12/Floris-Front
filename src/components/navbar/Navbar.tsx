@@ -35,7 +35,7 @@ export default function Navbar() {
                     </MenuListButton>
                     <MenuButtonBadge badge={cartBadge} path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuButton path="/#contact" title="Contact" icon="/icons/telephone.svg" />
-                    <MenuButton path="/login" title="" icon="/icons/person-circle.svg" />
+                    <MenuButton path="/auth/login" title="" icon="/icons/person-circle.svg" />
 
                 </div>
                 <div className="flex md:hidden items-center">

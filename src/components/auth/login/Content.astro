@@ -1,0 +1,19 @@
+---
+import LoginComponent from './LoginComponent.tsx'
+import AuthSVG from '../svg/AuthSVG.tsx'
+---
+<div class="grid md:grid-cols-2 h-screen">
+    <div>
+        <div class="relative p-6">
+            <a class="text-pink-500 text-3xl" href="/">
+                <i class="bi bi-arrow-left-circle-fill"></i>
+            </a>
+        </div>
+        <div class="flex pb-20 justify-center items-center">
+            <LoginComponent client:idle/>
+        </div>
+    </div>
+    <div class="hidden md:block overflow-hidden w-full h-full">
+        <AuthSVG/>
+    </div>
+</div>
