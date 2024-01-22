@@ -8,13 +8,15 @@ export default function useCart() :
     const [products, setProducts] = useState<CartModel>(CartModel.EmptyCart());
 
     useEffect(() => {
-        setProducts(CartServices.getCartFromStorage());
+        const cart = CartServices.getCartFromStorage();
+        if(cart) {
+            setProducts(cart);
+        }
         
         return () => {
             setProducts(CartModel.EmptyCart());
         }
     }, []);
-
 
     return [products, setProducts]
 }
