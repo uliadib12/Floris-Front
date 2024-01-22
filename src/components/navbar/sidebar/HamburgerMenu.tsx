@@ -45,11 +45,11 @@ export default function HamburerMenu(
                     <MenuButton path="/login" title="login" icon="/icons/person-circle.svg" />
                     <br />
                     <MenuButton path="/" title="Home" icon="/icons/house.svg" />
-                    <MenuButtonBadge path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuButton path="/category?name=papan-bunga" title="Papan Bunga" />
                     <MenuButton path="/category?name=bouquet" title="Bouquet" />
                     <MenuButton path="/category?name=money-cake" title="Money Cake" />
                     <MenuButton path="/category?name=snack-tower" title="Snack Tower" />
+                    <MenuButtonBadge path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuButton path="/#contact" title="Contact" icon='/icons/telephone.svg' onClick={props.toggleMenu}/>
                 </motion.div>
             </motion.div>    

@@ -8,17 +8,15 @@ export default function MenuListButton(
     }
 ){
     return(
-        <>
-<div>
-    <MenuButton title={props.title} icon={props.icon} />
+    <div className="relative">
+        <MenuButton title={props.title} icon={props.icon} />
 
-    <div className="hidden peer-hover:flex hover:flex
-        absolute top-10 right-0
-        w-[200px]
-        flex-col bg-pink-400 drop-shadow-lg p-4">
-            {props.children}
+        <div className="hidden peer-hover:flex hover:flex
+            absolute left-0
+            w-[200px]
+            flex-col bg-pink-400 drop-shadow-lg p-4">
+                {props.children}
         </div>
     </div>
-        </>
     )
 }
