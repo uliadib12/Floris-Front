@@ -3,11 +3,17 @@ import OrderDetail from './OrderDetail.tsx'
 import ProductDetail from './ProductDetail.tsx'
 ---
 
-<div class="p-4 lg:p-10 lg:grid lg:grid-cols-3 lg:gap-2 lg:h-screen">
-    <div class="lg:h-full lg:col-span-2 border-2 border-solid border-pink-400 border-opacity-70 rounded-md">
+<div class="p-4 lg:p-10 lg:grid lg:grid-cols-3 gap-3">
+    <div class="lg:min-h-[85vh] lg:col-span-2 border-2 border-solid border-pink-400 border-opacity-50 rounded-sm">
         <OrderDetail client:idle/>
     </div>
-    <div class="lg:h-full border-2 border-solid border-pink-400 border-opacity-70 rounded-md">
+    <div class="mt-2 lg:mt-0 h-fit border-2 border-solid border-pink-400 border-opacity-50 rounded-sm">
         <ProductDetail client:idle/>
+    </div>
+    <!-- make floating button in bottom right to order -->
+    <div class="fixed bottom-0 right-6 m-4">
+        <button class="bg-pink-400 hover:bg-pink-500 border-2 border-solid border-white text-white font-bold py-2 px-4 rounded">
+            Order
+        </button>
     </div>
 </div>
