@@ -4,9 +4,6 @@ import HamburerMenu from "./sidebar/HamburgerMenu";
 import MenuButton from "./topbar/MenuButton";
 import MenuListButton from "./topbar/MenuListButton";
 import MenuButtonBadge from "./topbar/MenuButtonBadge";
-import { useStore } from "@nanostores/react";
-import { cartItems } from "../../states/cartState";
-import useCartBadge from "../../hooks/cart/cartBadgeHook";
 
 
 export default function Navbar() {
@@ -14,8 +11,6 @@ export default function Navbar() {
     function toggleMenu() {
         setIsOpen(!isOpen);
     }
-
-    const cartBadge = useCartBadge();
 
     return (
         <div className="w-full fixed drop-shadow-lg z-50">
@@ -33,7 +28,7 @@ export default function Navbar() {
                         <MenuButton path="/category?name=money-cake" title="Money Cake" />
                         <MenuButton path="/category?name=snack-tower" title="Snack Tower" />
                     </MenuListButton>
-                    <MenuButtonBadge badge={cartBadge} path='/cart' title="Cart" icon="/icons/cart.svg" />
+                    <MenuButtonBadge badge={false} path='/cart' title="Cart" icon="/icons/cart.svg" />
                     <MenuButton path="/#contact" title="Contact" icon="/icons/telephone.svg" />
                     <MenuButton path="/auth/login" title="" icon="/icons/person-circle.svg" />
 
