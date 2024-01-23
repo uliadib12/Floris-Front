@@ -1,0 +1,13 @@
+---
+import OrderDetail from './OrderDetail.tsx'
+import ProductDetail from './ProductDetail.tsx'
+---
+
+<div class="p-4 lg:p-10 lg:grid lg:grid-cols-3 lg:gap-2 lg:h-screen">
+    <div class="lg:h-full lg:col-span-2 border-2 border-solid border-pink-400 border-opacity-70 rounded-md">
+        <OrderDetail client:idle/>
+    </div>
+    <div class="lg:h-full border-2 border-solid border-pink-400 border-opacity-70 rounded-md">
+        <ProductDetail client:idle/>
+    </div>
+</div>
