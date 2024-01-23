@@ -69,7 +69,7 @@ export default function ProductDetails({product, setProduct}
                     })
                     showToast()
                 }}
-                className="flex gap-2 bg-pink-400 border-solid border-white border-2 px-4 py-2 rounded-md text-white">
+                className="flex gap-2 bg-pink-500 border-solid border-white border-2 px-4 py-2 rounded-md text-white">
                     Add to Cart
                     <img src="/icons/cart.svg" width={20} height={20} alt="home" style={{filter: 'invert(1)'}}/>
                 </button>

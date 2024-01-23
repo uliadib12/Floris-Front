@@ -23,7 +23,7 @@ export default function Card(
             </div>
             <div className="flex justify-center">
                 <div className="px-6 pt-4 pb-2 mb-4">
-                    <a href={`/category?name=${props.path}`} className="bg-pink-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">
+                    <a href={`/category?name=${props.path}`} className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">
                         See More
                     </a>
                 </div>

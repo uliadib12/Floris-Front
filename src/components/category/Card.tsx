@@ -43,7 +43,7 @@ export default function Card(
                 <div className="px-6 pb-2 mb-4">
                     <a 
                     href={`/product?id=${props.id}`} 
-                    className={"bg-pink-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded " + (props.id === -1 ? "pointer-events-none" : "") }>
+                    className={"bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded " + (props.id === -1 ? "pointer-events-none" : "") }>
                         Product Detail
                     </a>
                 </div>
