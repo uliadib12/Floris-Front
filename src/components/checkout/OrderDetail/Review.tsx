@@ -1,14 +1,19 @@
+import { useContext } from "react";
+import { CheckoutContext } from "../../../hooks/checkout/createCheckoutContext";
+
 export default function Review() {
+    const [checkoutState, setCheckoutState] = useContext(CheckoutContext);
+
     return (
         <div className="flex flex-col gap-4 p-4">
             <h1 className="text-2xl font-bold">Review</h1>
             <AddressReview 
-            name="John Doe" 
-            phone="08123456789" 
-            address="Jl. Raya Bogor No. 5" 
-            day="2021-10-10" 
-            time="09:00" />
-            <PaymentReview payment="Transfer" />
+            name={checkoutState?.address?.name} 
+            phone={checkoutState?.address?.phone} 
+            address={checkoutState?.address?.address}
+            day={checkoutState?.address?.day}
+            time={checkoutState?.address?.time} />
+            <PaymentReview payment={checkoutState?.payment?.at(checkoutState?.paymentSelected).method} />
         </div>
     )
 }
