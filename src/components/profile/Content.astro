@@ -1,0 +1,13 @@
+---
+import UserProfile from './UserProfile.tsx'
+import UserInformation from './UserInformation.tsx'
+---
+
+<div class="min-h-[90vh]">
+    <div class="bg-gray-100 h-60">
+        <UserProfile client:idle/>
+    </div>
+    <div>
+        <UserInformation client:idle/>
+    </div>
+</div>

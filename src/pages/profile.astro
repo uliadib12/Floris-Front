@@ -1,0 +1,15 @@
+---
+import Content from "../components/profile/Content.astro";
+import Footer from "../components/footer/Footer";
+import Navbar from "../components/navbar/Navbar";
+import Layout from "../layouts/Layout.astro";
+import ProfileLayout from "../layouts/ProfileLayout.astro";
+---
+
+<Layout title="Home">
+	<ProfileLayout>
+		<Navbar slot="navbar" client:load/>
+		<Content/>
+		<Footer slot="footer"/>
+	</ProfileLayout>
+</Layout>
