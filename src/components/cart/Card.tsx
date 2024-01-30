@@ -45,7 +45,7 @@ export default function Card({index} : {index: number}) {
         <>
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
                 <div
-                    style={{backgroundImage: "url('/images/bouquet.webp')"}}
+                    style={{backgroundImage: `url('${product.image}')`}}
                     className="h-64 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
                 </div>
                 <div className="w-full border-r border-b border-l border-pink-400 lg:border-l-0 lg:border-t lg:border-pink-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
