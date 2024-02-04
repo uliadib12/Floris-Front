@@ -11,11 +11,13 @@ export default function CheckoutContainer() {
     const [checkoutState, setCheckoutState] : [CheckoutModel, (checkoutState: CheckoutModel) => void] 
     = useState(undefined);
 
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
         const address = AddressModel.Empty();
         const products = CheckoutProductModel.GetProductsFromStorage();
         const payment = [
-            new PaymentModel("transfer", "Transfer", "Pay with Transfer Bank or E-Wallet", "💳"),
+            // new PaymentModel("transfer", "Transfer", "Pay with Transfer Bank or E-Wallet", "💳"),
             new PaymentModel("cod", "Cash on Delivery", "Pay with cash upon delivery", "💵")
         ];
         setCheckoutState(new CheckoutModel(address, products, payment));
@@ -34,12 +36,19 @@ export default function CheckoutContainer() {
             </div>
             <div className="fixed bottom-0 right-6 m-4">
                 <button 
-                onClick={() => {
-                    if (checkoutState?.allowOrderMenu >= 2) {
+                onClick={async () => {
+                    try{
+                        setIsLoading(true);
+                        await checkoutState.sendOrder();
                         setModalShow(true);
+                        setIsLoading(false);
+                    }
+                    catch(e){
+                        alert("Failed to send order");
                     }
                 }}
-                className={(checkoutState?.allowOrderMenu >= 2 ? "bg-pink-500" : "bg-gray-300 pointer-events-none") + " hover:bg-pink-600 border-2 border-solid border-white text-white font-bold py-2 px-4 rounded-lg"}>
+                className={(checkoutState?.allowOrderMenu >= 2 && !isLoading
+                    ? "bg-pink-500" : "bg-gray-300 pointer-events-none") + " hover:bg-pink-600 border-2 border-solid border-white text-white font-bold py-2 px-4 rounded-lg"}>
                     Order Now
                 </button>
             </div>

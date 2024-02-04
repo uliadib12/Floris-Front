@@ -62,12 +62,17 @@ export default function ProductDetails({product, setProduct}
             <div className="fixed bottom-0 left-0 right-0 p-4 flex justify-end z-40">
                 <button 
                 onClick={() => {
-                    addToCart(product, {
-                        variantIndex,
-                        quantity,
-                        additionalInformation
-                    })
-                    showToast()
+                    try{
+                        addToCart(product, {
+                            variantIndex,
+                            quantity,
+                            additionalInformation
+                        });
+                        showToast("Success", "Product added to cart")
+                    }
+                    catch(err){
+                        showToast("Error", err.message)
+                    }
                 }}
                 className="flex gap-2 bg-pink-500 border-solid border-white border-2 px-4 py-2 rounded-md text-white">
                     Add to Cart
@@ -83,11 +88,11 @@ function addToCart(product: ProductModel, userInput: UserInputProduct){
     CartServices.addProductToCart(ProductCartModel.FromProduct(newProduct))
 }
 
-function showToast(){
+function showToast(title: string, message: string) {
     // @ts-ignore
     toastr.options = {
         "debug": false,
-        "positionClass": "toast-bottom-left",
+        // "positionClass": "toast-bottom-left",
         "onclick": null,
         "fadeIn": 300,
         "fadeOut": 1000,
@@ -95,5 +100,5 @@ function showToast(){
         "extendedTimeOut": 1000
     }
     // @ts-ignore
-    toastr.success('Product added to cart', 'Success')
+    toastr.success(message, title)
 }

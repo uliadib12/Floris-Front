@@ -30,7 +30,13 @@ export default function Address() {
             day: data.day,
             time: data.time
         }
-        setCheckoutState({...checkoutState, orderMenu: 1, allowOrderMenu, address: address});
+
+        const newCheckoutState = checkoutState.clone();
+        newCheckoutState.address = address;
+        newCheckoutState.orderMenu = 1;
+        newCheckoutState.allowOrderMenu = allowOrderMenu;
+
+        setCheckoutState(newCheckoutState);
     };
 
 

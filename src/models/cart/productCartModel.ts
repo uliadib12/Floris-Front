@@ -1,7 +1,7 @@
 import type ProductModel from "../product/productModel";
 
 export default class ProductCartModel {
-    id: number;
+    id: string;
     name: string;
     image: string;
     variantIndex: number;
@@ -13,7 +13,7 @@ export default class ProductCartModel {
 
     constructor
     (
-        id: number, 
+        id: string, 
         name: string, 
         image: string, 
         variantIndex: number,

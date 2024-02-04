@@ -9,7 +9,9 @@ export default function OrderDetail() {
     
     const chageOrderMenu = (menu: number) => {
         if (checkoutState?.allowOrderMenu < menu) return;
-        setCheckoutState({...checkoutState, orderMenu: menu});
+        const newCheckoutState = checkoutState.clone();
+        newCheckoutState.orderMenu = menu;
+        setCheckoutState(newCheckoutState);
     }
     
     return (

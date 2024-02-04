@@ -1,5 +1,5 @@
 export default class ProductModel {
-    id: number;
+    id: string;
     name: string;
     description: string;
     images: string[];
@@ -14,7 +14,7 @@ export default class ProductModel {
         images,
         variants
     } : { 
-            id: number, 
+            id: string, 
             name: string, 
             description: string, 
             images: string[], 

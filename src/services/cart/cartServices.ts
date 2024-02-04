@@ -21,6 +21,7 @@ export default class CartServices {
 
     static addProductToCart(product: ProductCartModel) {
         if (this.isProductInCart(product)) {
+            throw new Error("Product already in cart");
             return;
         }
         const cart = this.getCartFromStorage();
@@ -46,7 +47,7 @@ export default class CartServices {
         }
     }
 
-    static removeProductFromCart(id: number) {
+    static removeProductFromCart(id: string) {
         const cart = this.getCartFromStorage();
         if (cart) {
             const index = cart.products.findIndex(p => p.id === id);

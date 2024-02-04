@@ -9,24 +9,39 @@ export default function Payment() {
             <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-2xl font-bold">Payment</h1>
-                    <Card
-                        title={checkoutState?.payment.at(0).method}
-                        description={checkoutState?.payment.at(0).description}
-                        icon={checkoutState?.payment.at(0).icon}
-                        active={checkoutState.paymentSelected === 0}
-                        onClick={() => setCheckoutState({...checkoutState, paymentSelected: 0})}
-                    />
-                    <Card
-                        title={checkoutState?.payment.at(1).method}
-                        description={checkoutState?.payment.at(1).description}
-                        icon={checkoutState?.payment.at(1).icon}
-                        active={checkoutState.paymentSelected === 1}
-                        onClick={() => setCheckoutState({...checkoutState, paymentSelected: 1})}
-                    />
+                    {
+                        checkoutState?.payment.map((pay, index) => (
+                            <Card
+                            key={index}
+                            title={checkoutState?.payment.at(index).method}
+                            description={checkoutState?.payment.at(index).description}
+                            icon={checkoutState?.payment.at(index).icon}
+                            active={checkoutState.paymentSelected === index}
+                            onClick={() => {
+                                const newCheckoutState = checkoutState
+                                .clone()
+
+                                newCheckoutState.paymentSelected = index;
+
+                                setCheckoutState(newCheckoutState);
+                            }}
+                            />
+                        ))
+                    }
                 </div>
                 <div className="flex justify-end mt-4">
                     <button 
-                    onClick={() => setCheckoutState({...checkoutState, orderMenu: 2, allowOrderMenu: 2})}
+                    onClick={() => {
+                        if(checkoutState === undefined) return;
+                        
+                        const newCheckoutState = checkoutState
+                        .clone()
+                        
+                        newCheckoutState.orderMenu = 2;
+                        newCheckoutState.allowOrderMenu = 2;
+
+                        setCheckoutState(newCheckoutState);
+                    }}
                     className="bg-pink-500 text-white rounded-md px-4 py-2">Next</button>
                 </div>
             </div>
